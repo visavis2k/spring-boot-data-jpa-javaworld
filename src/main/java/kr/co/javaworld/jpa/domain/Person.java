@@ -5,10 +5,13 @@ package kr.co.javaworld.jpa.domain;
 
 @Entity
 @Table(name = "TB_PERSON_02837")
+@SequenceGenerator(name = Person.SEQUENCE_NAME, sequenceName = Person.SEQUENCE_NAME, allocationSize = 50)
 public class Person {
 
+    public static final String SEQUENCE_NAME = "sequence_person";
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = Person.SEQUENCE_NAME)
     private Long id;
 
     @Column(name = "PERSON_NAME", length = 100, unique = true, nullable = false)

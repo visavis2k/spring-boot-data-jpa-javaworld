@@ -186,13 +186,13 @@ insert into review(hotel_id, idx, check_in_date, rating, trip_type, title, detai
 insert into review(hotel_id, idx, check_in_date, rating, trip_type, title, details) values (27, 1, '2006-02-20', 0, 0, 'Avoid', 'This place is the pits, they charged us twice for a single night stay.  I only got refunded after contacting my credit card company.')
 
 -- Car
-insert into tb_car(name) values ('Mercedes')
-insert into tb_car(name) values ('Toyota')
-insert into tb_car(name) values ('Hyundai')
-insert into tb_car(name) values ('BMW')
+insert into tb_car(id, name) values (NEXT VALUE FOR sequence_car, 'Mercedes')
+insert into tb_car(id, name) values (NEXT VALUE FOR sequence_car, 'Toyota')
+insert into tb_car(id, name) values (NEXT VALUE FOR sequence_car, 'Hyundai')
+insert into tb_car(id, name) values (NEXT VALUE FOR sequence_car, 'BMW')
 
 -- Person
-insert into tb_person_02837(person_name) values ('Park')
+insert into tb_person_02837(id, person_name) values (NEXT VALUE FOR sequence_person, 'Park')
 
 -- Person - Cars
 insert into tb_person_02837_cars(tb_person_02837_id, cars_id) values (1, 1)
