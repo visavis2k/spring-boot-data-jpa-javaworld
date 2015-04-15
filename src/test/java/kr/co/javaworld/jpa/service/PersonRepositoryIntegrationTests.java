@@ -46,4 +46,16 @@ public class PersonRepositoryIntegrationTests {
         assertThat(cars, hasSize(4));
         assertThat(cars.get(0).getName(), is("Mercedes"));
     }
+
+
+    @Test
+    public void testTableKeyGenerator() {
+        Person person = new Person();
+        person.setName("Lee");
+
+        Person saved = repository.save(person);
+
+        assertThat(saved.getId(), is(2L));
+    }
+
 }

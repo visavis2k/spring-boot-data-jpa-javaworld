@@ -7,11 +7,16 @@ import javax.persistence.*;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @TableGenerator(name = "TABLE_GENERATOR", table = "ID_TABLE", allocationSize = 0)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "TABLE_GENERATOR")
     private Long id;
 
     @Column(nullable = false)
     private String name;
+
+    public Long getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -21,6 +26,4 @@ public class Car {
         this.name = name;
     }
 
-    protected Car() {
-    }
 }

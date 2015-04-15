@@ -13,4 +13,6 @@ interface PersonRepository extends Repository<Person, Long> {
 
     List<Person> findByName(String name);
 
+    Person save(Person person);
+
 }

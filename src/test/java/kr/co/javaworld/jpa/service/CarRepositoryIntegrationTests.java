@@ -35,4 +35,14 @@ public class CarRepositoryIntegrationTests {
         assertThat(cars.get(0).getName(), is("Mercedes"));
     }
 
+    @Test
+    public void testTableKeyGenerator() {
+        Car car = new Car();
+        car.setName("Kia");
+
+        Car saved = repository.save(car);
+
+        assertThat(saved.getId(), is(5L));
+    }
+
 }

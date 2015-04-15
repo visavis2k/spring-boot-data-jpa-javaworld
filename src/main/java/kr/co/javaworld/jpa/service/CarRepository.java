@@ -10,4 +10,7 @@ interface CarRepository extends Repository<Car, Long> {
     List<Car> findByName(String name);
 
     List<Car> findByNameContaining(String name);
+
+    Car save(Car car);
+
 }
