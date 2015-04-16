@@ -1,10 +1,13 @@
 package kr.co.javaworld.jpa.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "TB_CAR")
-public class Car {
+public class Car implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
